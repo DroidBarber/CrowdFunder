@@ -1,0 +1,44 @@
+{
+  "name": "@zag-js/popper",
+  "version": "0.1.13",
+  "description": "Dynamic positioning logic for ui machines",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "js",
+    "utils",
+    "popper"
+  ],
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "homepage": "https://github.com/chakra-ui/zag#readme",
+  "license": "MIT",
+  "repository": "https://github.com/chakra-ui/zag/tree/main/packages/utilities/popper",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/zag/issues"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "1.0.1"
+  },
+  "devDependencies": {
+    "@zag-js/dom-utils": "0.1.13",
+    "@zag-js/utils": "0.1.6"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format=esm,cjs",
+    "start": "pnpm build --watch",
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "test": "jest --config ../../../jest.config.js --rootDir . --passWithNoTests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test-ci": "pnpm test --ci --runInBand",
+    "test-watch": "pnpm test --watch -u",
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@zag-js/store",
+  "version": "0.1.4",
+  "description": "The reactive store package for zag machines",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "js",
+    "utils",
+    "store",
+    "reactivity"
+  ],
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "homepage": "https://github.com/chakra-ui/zag#readme",
+  "license": "MIT",
+  "repository": "https://github.com/chakra-ui/zag/tree/main/packages/utilities/store",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/zag/issues"
+  },
+  "dependencies": {
+    "proxy-compare": "2.3.0"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format=esm,cjs",
+    "start": "pnpm build --watch",
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "test": "jest --config ../../../jest.config.js --rootDir tests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test-ci": "pnpm test --ci --runInBand -u",
+    "test-watch": "pnpm test --watchAll"
+  }
+}

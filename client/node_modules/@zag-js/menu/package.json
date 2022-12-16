@@ -1,0 +1,52 @@
+{
+  "name": "@zag-js/menu",
+  "version": "0.1.16",
+  "description": "Core logic for the menu widget implemented as a state machine",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "js",
+    "machine",
+    "xstate",
+    "statechart",
+    "component",
+    "chakra-ui",
+    "menu"
+  ],
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "homepage": "https://github.com/chakra-ui/zag#readme",
+  "license": "MIT",
+  "repository": "https://github.com/chakra-ui/zag/tree/main/packages/menu",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/zag/issues"
+  },
+  "dependencies": {
+    "@zag-js/core": "0.1.12",
+    "@zag-js/dismissable": "0.1.6",
+    "@zag-js/popper": "0.1.13",
+    "@zag-js/types": "0.2.7"
+  },
+  "devDependencies": {
+    "@zag-js/dom-utils": "0.1.13",
+    "@zag-js/rect-utils": "0.1.8",
+    "@zag-js/utils": "0.1.6"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format=esm,cjs",
+    "start": "pnpm build --watch",
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "test": "jest --config ../../../jest.config.js --rootDir . --passWithNoTests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test-ci": "pnpm test --ci --runInBand",
+    "test-watch": "pnpm test --watch -u",
+    "typecheck": "tsc --noEmit"
+  }
+}

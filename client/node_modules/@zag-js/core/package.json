@@ -1,0 +1,47 @@
+{
+  "name": "@zag-js/core",
+  "version": "0.1.12",
+  "description": "A minimal implementation of xstate fsm for UI machines",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "ui-machines",
+    "state-machines",
+    "zag",
+    "fsm",
+    "xstate",
+    "finite state machine"
+  ],
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "homepage": "https://github.com/chakra-ui/zag#readme",
+  "license": "MIT",
+  "repository": "https://github.com/chakra-ui/zag/tree/main/packages/machine",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/zag/issues"
+  },
+  "dependencies": {
+    "@zag-js/store": "0.1.4",
+    "klona": "2.0.5"
+  },
+  "devDependencies": {
+    "@zag-js/utils": "0.1.6"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format=esm,cjs",
+    "start": "pnpm build --watch",
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "test": "jest --config ../../jest.config.js --rootDir . --passWithNoTests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test-ci": "pnpm test --ci --runInBand",
+    "test-watch": "pnpm test --watch -u",
+    "typecheck": "tsc --noEmit"
+  }
+}

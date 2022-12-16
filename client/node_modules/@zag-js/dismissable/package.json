@@ -1,0 +1,47 @@
+{
+  "name": "@zag-js/dismissable",
+  "version": "0.1.6",
+  "description": "Dismissable layer utilities for the DOM",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "js",
+    "utils",
+    "dimissable",
+    "layer",
+    "close",
+    "signal",
+    "outside-click"
+  ],
+  "author": "Segun Adebayo <sage@adebayosegun.com>",
+  "homepage": "https://github.com/chakra-ui/zag#readme",
+  "license": "MIT",
+  "repository": "https://github.com/chakra-ui/zag/tree/main/packages/utilities/interact-outside",
+  "sideEffects": false,
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@zag-js/interact-outside": "0.1.6"
+  },
+  "devDependencies": {
+    "@zag-js/dom-utils": "0.1.13",
+    "@zag-js/utils": "0.1.6"
+  },
+  "bugs": {
+    "url": "https://github.com/chakra-ui/zag/issues"
+  },
+  "scripts": {
+    "build-fast": "tsup src/index.ts --format=esm,cjs",
+    "start": "pnpm build --watch",
+    "build": "tsup src/index.ts --format=esm,cjs --dts",
+    "test": "jest --config ../../../jest.config.js --rootDir tests",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test-ci": "pnpm test --ci --runInBand -u",
+    "test-watch": "pnpm test --watchAll"
+  }
+}
